@@ -1,12 +1,12 @@
 package handlers
 
 import (
-    "encoding/json"
-    "net/http"
-    "regexp"
-    "seu-projeto/internal/models"
-    "go.opentelemetry.io/otel"
-    "go.opentelemetry.io/otel/propagation"
+	"cep-opentelemetry/service-b/internal/models"
+	"encoding/json"
+	"net/http"
+	"regexp"
+
+	"go.opentelemetry.io/otel"
 )
 
 func HandleTemperatureRequest(w http.ResponseWriter, r *http.Request) {

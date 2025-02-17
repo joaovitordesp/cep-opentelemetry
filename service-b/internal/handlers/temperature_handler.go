@@ -1,12 +1,13 @@
 package handlers
 
 import (
-    "encoding/json"
-    "net/http"
-    "github.com/gorilla/mux"
-    "seu-projeto/internal/services"
-    "seu-projeto/internal/models"
-    "go.opentelemetry.io/otel"
+	"cep-opentelemetry/internal/services"
+	"cep-opentelemetry/service-b/internal/models"
+	"encoding/json"
+	"net/http"
+
+	"github.com/gorilla/mux"
+	"go.opentelemetry.io/otel"
 )
 
 func HandleTemperature(w http.ResponseWriter, r *http.Request) {

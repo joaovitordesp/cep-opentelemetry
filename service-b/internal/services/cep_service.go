@@ -1,12 +1,13 @@
 package services
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "net/http"
-    "seu-projeto/internal/models"
-    "go.opentelemetry.io/otel"
+	"cep-opentelemetry/service-b/internal/models"
+	"context"
+	"encoding/json"
+	"fmt"
+	"net/http"
+
+	"go.opentelemetry.io/otel"
 )
 
 func GetCepInfo(ctx context.Context, cep string) (*models.CepInfo, error) {

@@ -1,12 +1,13 @@
 package main
 
 import (
-    "context"
-    "log"
-    "net/http"
-    "github.com/gorilla/mux"
-    "seu-projeto/internal/handlers"
-    "seu-projeto/pkg/telemetry"
+	"cep-opentelemetry/internal/handlers"
+	"cep-opentelemetry/pkg/telemetry"
+	"context"
+	"log"
+	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 func main() {

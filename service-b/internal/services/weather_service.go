@@ -1,13 +1,14 @@
 package services
 
 import (
-    "context"
-    "encoding/json"
-    "fmt"
-    "net/http"
-    "os"
-    "seu-projeto/internal/models"
-    "go.opentelemetry.io/otel"
+	"cep-opentelemetry/service-b/internal/models"
+	"context"
+	"encoding/json"
+	"fmt"
+	"net/http"
+	"os"
+
+	"go.opentelemetry.io/otel"
 )
 
 func GetWeather(ctx context.Context, city string) (*models.Temperature, error) {
