@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  service-a:
+    build: 
+      context: ./service-a
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - SERVICE_B_URL=http://service-b:8081
+      - OTEL_EXPORTER_ZIPKIN_ENDPOINT=http://zipkin:9411/api/v2/spans
+    depends_on:
+      - service-b
+      - zipkin
+
+  service-b:
+    build:
+      context: ./service-b
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    environment:
+      - WEATHER_API_KEY=sua_chave_api_aqui
+      - OTEL_EXPORTER_ZIPKIN_ENDPOINT=http://zipkin:9411/api/v2/spans
+
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411" 
